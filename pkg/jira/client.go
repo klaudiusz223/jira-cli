@@ -3,6 +3,7 @@ package jira
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"net"
@@ -120,7 +121,8 @@ func NewClient(c Config, opts ...ClientFunc) *Client {
 		debug:  c.Debug,
 	}
 	client.transport = &http.Transport{
-		Proxy: http.ProxyFromEnvironment,
+		Proxy:           http.ProxyFromEnvironment,
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 		DialContext: (&net.Dialer{
 			Timeout: client.timeout,
 		}).DialContext,
