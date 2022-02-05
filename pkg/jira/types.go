@@ -119,8 +119,9 @@ type Transition struct {
 
 // User holds user info.
 type User struct {
-	AccountID string `json:"accountId"`
-	Email     string `json:"emailAddress"`
-	Name      string `json:"displayName"`
-	Active    bool   `json:"active"`
+	AccountID   string `json:"accountId"`
+	Email       string `json:"emailAddress"`
+	DisplayName string `json:"displayName"`
+	Name        string `json:"name"`
+	Active      bool   `json:"active"`
 }
