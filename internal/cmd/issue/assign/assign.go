@@ -290,7 +290,7 @@ func (ac *assignCmd) searchAndAssignUser(project string) error {
 		q = "*"
 	}
 	u, err := api.ProxyUserSearch(ac.client, &jira.UserSearchOptions{
-		Query:      q,
+		Username:   q,
 		Project:    project,
 		MaxResults: maxResults,
 	})

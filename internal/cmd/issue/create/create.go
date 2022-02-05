@@ -153,8 +153,8 @@ func create(cmd *cobra.Command, _ []string) {
 
 	if params.assignee != "" {
 		user, err := api.ProxyUserSearch(client, &jira.UserSearchOptions{
-			Query:   params.assignee,
-			Project: project,
+			Username: params.assignee,
+			Project:  project,
 		})
 		if err != nil || len(user) == 0 {
 			cmdutil.Failed("Unable to find assignee")
