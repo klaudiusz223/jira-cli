@@ -55,16 +55,16 @@ func TestUserSearch(t *testing.T) {
 
 	expected := []*User{
 		{
-			AccountID: "5fb82376aca10c006949f35b",
-			Email:     "jane@domain.tld",
-			Name:      "Jane Doe",
-			Active:    true,
+			AccountID:   "5fb82376aca10c006949f35b",
+			Email:       "jane@domain.tld",
+			DisplayName: "Jane Doe",
+			Active:      true,
 		},
 		{
-			AccountID: "5fb82376aca10c006949f35c",
-			Email:     "jon@domain.tld",
-			Name:      "Jon Doe",
-			Active:    false,
+			AccountID:   "5fb82376aca10c006949f35c",
+			Email:       "jon@domain.tld",
+			DisplayName: "Jon Doe",
+			Active:      false,
 		},
 	}
 	assert.Equal(t, expected, actual)
